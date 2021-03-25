@@ -1,0 +1,13 @@
+<p *ngIf="loading">Getting your location...</p>
+
+<div class="google_map_container">
+  <google-map [zoom]="mapZoom" [center]="mapCenter" [options]="mapOptions">
+    <map-marker
+      #marker="mapMarker"
+      [position]="mapCenter"
+      [options]="markerOptions"
+      (mapClick)="openInfoWindow(marker)">
+    </map-marker>
+    <map-info-window>{{ markerInfoContent }}</map-info-window>
+  </google-map>
+</div> 
